@@ -72,18 +72,6 @@ const BARTPFLEGE: ProductIngredients[] = [
 
 const CATEGORIES: Category[] = ["Hautpflege", "Bartpflege"];
 
-const columnVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1] as const,
-      delay: i * 0.1,
-    },
-  }),
-};
 
 function ProductColumn({
   data,
@@ -94,11 +82,10 @@ function ProductColumn({
 }) {
   return (
     <motion.div
-      custom={index}
-      variants={columnVariants}
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: index * 0.1 }}
     >
       <span
         className="block font-[var(--font-inter)] uppercase text-[#1a3a2a]"
