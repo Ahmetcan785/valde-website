@@ -35,7 +35,7 @@ export default function Nav() {
       <motion.header
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const }}
         className="fixed top-0 left-0 right-0 z-50 w-full bg-white"
         style={{ borderBottom: "0.5px solid #e8e8e8" }}
       >
@@ -135,7 +135,7 @@ export default function Nav() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            transition={{ duration: 0.25, ease: [0.42, 0, 0.58, 1] as const }}
             className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-10 md:hidden"
           >
             {NAV_LINKS.map(({ label, href }, i) => (
@@ -192,7 +192,7 @@ function PulsingDot() {
         flexShrink: 0,
       }}
       animate={{ opacity: [1, 0.4, 1], scale: [1, 0.7, 1] }}
-      transition={{ duration: 1.8, ease: "easeInOut", repeat: Infinity }}
+      transition={{ duration: 1.8, ease: [0.42, 0, 0.58, 1] as const, repeat: Infinity }}
     />
   );
 }

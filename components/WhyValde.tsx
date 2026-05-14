@@ -43,7 +43,7 @@ function Block({ feature, align }: { feature: Feature; align: "left" | "right" }
       initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: feature.delay }}
+      transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const, delay: feature.delay }}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -90,7 +90,7 @@ export default function WhyValde() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const }}
         style={{ marginBottom: "4rem" }}
       >
         <h2 style={{
@@ -132,7 +132,7 @@ export default function WhyValde() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as const }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -176,7 +176,7 @@ export default function WhyValde() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

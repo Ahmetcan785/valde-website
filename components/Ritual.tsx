@@ -95,7 +95,7 @@ function StepRow({ step, isLast }: { step: Step; isLast: boolean }) {
       initial={{ opacity: 0, x: step.imageLeft ? -48 : 48 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as const }}
     >
       <div
         className="relative w-full bg-white"
@@ -118,7 +118,7 @@ function StepRow({ step, isLast }: { step: Step; isLast: boolean }) {
       initial={{ opacity: 0, x: step.imageLeft ? 48 : -48 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as const }}
     >
       <StepText step={step} />
     </motion.div>

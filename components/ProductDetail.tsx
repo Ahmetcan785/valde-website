@@ -43,7 +43,7 @@ export default function ProductDetail({ product }: { product: Product }) {
             className="w-full md:w-1/2"
             initial={{ opacity: 0, x: -48 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as const }}
           >
             <div
               className="relative w-full overflow-hidden"
@@ -67,7 +67,7 @@ export default function ProductDetail({ product }: { product: Product }) {
             className="w-full md:w-1/2 flex flex-col"
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as const, delay: 0.1 }}
           >
             <span
               className="font-[var(--font-inter)] uppercase text-[#6b6b6b]"
@@ -153,7 +153,7 @@ export default function ProductDetail({ product }: { product: Product }) {
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const }}
           >
             <div
               style={{
