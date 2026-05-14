@@ -72,7 +72,6 @@ const BARTPFLEGE: ProductIngredients[] = [
 
 const CATEGORIES: Category[] = ["Hautpflege", "Bartpflege"];
 
-
 function ProductColumn({
   data,
   index,
