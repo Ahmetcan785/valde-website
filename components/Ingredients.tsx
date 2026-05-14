@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 type Category = "Hautpflege" | "Bartpflege";
 
@@ -72,12 +72,12 @@ const BARTPFLEGE: ProductIngredients[] = [
 
 const CATEGORIES: Category[] = ["Hautpflege", "Bartpflege"];
 
-const columnVariants = {
+const columnVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: "easeOut", delay: i * 0.1 },
+    transition: { duration: 0.55, ease: [0.25, 0.1, 0.25, 1] as const, delay: i * 0.1 },
   }),
 };
 
