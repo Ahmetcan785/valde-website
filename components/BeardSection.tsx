@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-const fadeLeft = {
+const fadeLeft: Variants = {
   hidden: { opacity: 0, x: -48 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const fadeUp = (delay: number) => ({
+const fadeUp = (delay: number): Variants => ({
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut", delay } },
 });
