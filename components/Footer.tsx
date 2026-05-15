@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const PRODUCT_LINKS = [
   "Face Cleanser",
   "Face Serum",
@@ -9,7 +11,11 @@ const PRODUCT_LINKS = [
   "Bartroller",
 ];
 
-const LEGAL_LINKS = ["Impressum", "Datenschutz", "Kontakt"];
+const LEGAL_LINKS = [
+  { label: "Impressum", href: "#" },
+  { label: "Datenschutz", href: "/datenschutz" },
+  { label: "Kontakt", href: "#" },
+];
 
 function InstagramIcon() {
   return (
@@ -47,7 +53,7 @@ function TikTokIcon() {
 
 function FooterLink({ label, href = "#" }: { label: string; href?: string }) {
   return (
-    <a
+    <Link
       href={href}
       className="block font-[var(--font-inter)] transition-colors duration-200"
       style={{
@@ -64,7 +70,7 @@ function FooterLink({ label, href = "#" }: { label: string; href?: string }) {
       }}
     >
       {label}
-    </a>
+    </Link>
   );
 }
 
@@ -129,8 +135,8 @@ export default function Footer() {
           {/* Right — legal */}
           <div>
             <ColumnLabel>Rechtliches</ColumnLabel>
-            {LEGAL_LINKS.map((label) => (
-              <FooterLink key={label} label={label} />
+            {LEGAL_LINKS.map(({ label, href }) => (
+              <FooterLink key={label} label={label} href={href} />
             ))}
           </div>
 
