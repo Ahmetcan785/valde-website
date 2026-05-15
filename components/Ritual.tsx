@@ -177,7 +177,7 @@ export default function Ritual() {
 
         <div className="flex flex-col gap-16 md:gap-20">
           {STEPS.map((step, i) => (
-            <StepRow key={step.label} step={step} isLast={i === STEPS.length - 1} />
+            <StepRow key={i} step={step} isLast={i === STEPS.length - 1} />
           ))}
         </div>
 
